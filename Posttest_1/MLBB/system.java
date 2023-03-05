@@ -70,6 +70,6 @@ public class system {
         indeks = Integer.parseInt(br.readLine());
 
         list.remove(indeks - 1);
-        System.out.println("Data Hero Berhasil Dihapus ! ");
+        System.out.println("\nData Hero Berhasil Dihapus ! ");
     }
 }
