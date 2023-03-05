@@ -22,6 +22,7 @@ public class Main {
                                 5. Keluar
                 <==================================================>\n""";
         boolean gas = true;
+        
         while (gas) {
             System.out.print("\033\143");
             System.out.print(menu);
