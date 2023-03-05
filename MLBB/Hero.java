@@ -40,7 +40,7 @@ public class Hero {
     public void tambah() throws IOException {
 
         System.out.println("""
-                            \n<==========================================>
+                            \n<============================================>
                             <============== Input Data Hero =============>\n""");
 
         System.out.print("\nMasukan Nama Hero : ");

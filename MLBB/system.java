@@ -8,13 +8,12 @@ import java.io.IOException;
 public class system {
 
     ArrayList<Hero> list = new ArrayList<Hero>();
+    Hero hero = new Hero();
 
     InputStreamReader isr = new InputStreamReader(System.in);
     BufferedReader br = new BufferedReader(isr);
 
     public void tambah() throws IOException {
-
-        Hero hero = new Hero();
 
         hero.tambah();
         list.add(hero);
@@ -48,7 +47,6 @@ public class system {
     public void ubah() throws IOException {
 
         int indeks;
-        Hero hero = new Hero();
 
         lihat();
         System.out.print("Masukan Indeks Data Hero Yang Ingin Diubah : ");
@@ -60,7 +58,7 @@ public class system {
         hero.tambah();
 
         list.set(indeks - 1, hero);
-        System.out.println("Data Hero Berhasil Diubah ! ");
+        System.out.println("\nData Hero Berhasil Diubah ! ");
     }
 
     public void hapus() throws IOException {
