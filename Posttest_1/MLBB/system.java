@@ -91,7 +91,7 @@ public class system {
         Hero hero = new Hero(NamaHero, FixRole, FixSpesialist, HargaHero);
         list.add(hero);
         
-        System.out.println("\nHero " + list.get(list.size() - 1).Nama + " Berhasil Ditambah ! ");
+        System.out.println("\nHero " + list.get(list.size() - 1).getNama() + " Berhasil Ditambah ! ");
         br.readLine();
     }
 
@@ -108,10 +108,10 @@ public class system {
     
             for (int i = 0; i < list.size(); i++) {
                 System.out.println("\t\t     <" + (i + 1) + ">");
-                System.out.println("\t" + "Nama Hero       : " + ( list.get(i)).Nama);
-                System.out.println("\t" + "Role Hero       : " +  (list.get(i)).Role);
-                System.out.println("\t" + "Spesialist Hero : " + (list.get(i)).Spesialist);
-                System.out.println("\t" + "Harga Hero      : " +  (list.get(i)).Harga);
+                System.out.println("\t" + "Nama Hero       : " + ( list.get(i)).getNama());
+                System.out.println("\t" + "Role Hero       : " +  (list.get(i)).getRole());
+                System.out.println("\t" + "Spesialist Hero : " + (list.get(i)).getSpesialist());
+                System.out.println("\t" + "Harga Hero      : " +  (list.get(i)).getHarga());
                 System.out.println("\n");
             }
         }
