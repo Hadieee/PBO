@@ -57,9 +57,7 @@ public class Hero {
     public void setHarga(int Harga) {
         this.Harga = Harga;
     }
-    private String Nama;
-    private String Role;
-    private String Spesialist;
+    private String Nama, Role, Spesialist;
     private int Harga;
 
     public Hero(String Nama, String Role, String Spesialist, int Harga) {
@@ -68,4 +66,21 @@ public class Hero {
         this.Spesialist = Spesialist;
         this.Harga = Harga;
     }
+}
+
+public class Skin extends Hero {
+    public Skin(String Nama, String Role, String Spesialist, int Harga, String warna, int hargaSkin) {
+        super(Nama, Role, Spesialist, Harga);
+        Warna = warna;
+        HargaSkin = hargaSkin;
+    }
+}
+
+public class PaintedSkin extends Skin {
+
+    public PaintedSkin(String Nama, String Role, String Spesialist, int Harga, String warna, int hargaSkin,String NamaSkinPainted) {
+        super(Nama, Role, Spesialist, Harga, warna, hargaSkin);
+        this.NamaSkinPainted = NamaSkinPainted;
+    }
+
 }
