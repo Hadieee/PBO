@@ -67,20 +67,3 @@ public class Hero {
         this.Harga = Harga;
     }
 }
-
-public class Skin extends Hero {
-    public Skin(String Nama, String Role, String Spesialist, int Harga, String warna, int hargaSkin) {
-        super(Nama, Role, Spesialist, Harga);
-        Warna = warna;
-        HargaSkin = hargaSkin;
-    }
-}
-
-public class PaintedSkin extends Skin {
-
-    public PaintedSkin(String Nama, String Role, String Spesialist, int Harga, String warna, int hargaSkin,String NamaSkinPainted) {
-        super(Nama, Role, Spesialist, Harga, warna, hargaSkin);
-        this.NamaSkinPainted = NamaSkinPainted;
-    }
-
-}
