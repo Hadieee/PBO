@@ -154,7 +154,7 @@ public class system {
         else {
             System.out.println("""
                             <=================================================>
-                            <=================== List Hero ===================>\n""");
+                            <=================== List Hero ===================>\n\n""");
     
             for (int i = 0; i < list.size(); i++) {
                 System.out.println("\t\t       <" + (i + 1) + ">");
@@ -232,7 +232,7 @@ public class system {
         
         System.out.println("""
             \n<============================================>
-            <========== Masukan data skin hero ==========>\n""");
+            <========== Masukan data skin hero ==========>\n\n""");
         
         System.out.print("\nMasukan Warna Skin Hero : ");
         String WarnaSkin = br.readLine();
