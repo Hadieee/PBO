@@ -37,14 +37,6 @@ public class system {
                     7. Guard            14. Support
                 <==========================================> \n""";
 
-    String menuSkin = """
-                \n<============== Menu Skin Hero ==============>\n
-                            1. Tambah Skin Hero
-                            2. Tambah Skin Painted Hero
-                            3. Kembali Ke Menu Utama\n
-                <============================================> \n""";
-
-
     int PickSpesialist;
     String FixSpesialist;
     int HargaHero;
