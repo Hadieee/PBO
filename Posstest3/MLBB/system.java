@@ -1,14 +1,14 @@
 package MLBB;
 
-import java.util.ArrayList;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.io.IOException;
+import java.util.*;
+import java.io.*;
 
 // Class sistem dari program
 public class system {
     // Deklarasi Array
     ArrayList<Hero> list = new ArrayList<Hero>();
+    ArrayList<Skin> listSkin = new ArrayList<Skin>();
+    ArrayList<PaintedSkin> listPaintedSkin = new ArrayList<PaintedSkin>();
 
     String NamaHero;
 
@@ -36,6 +36,15 @@ public class system {
                     6. Damage           13. Regen
                     7. Guard            14. Support
                 <==========================================> \n""";
+
+    String menuSkin = """
+                \n<============== Menu Skin Hero ==============>\n
+                            1. Tambah Skin Hero
+                            2. Tambah Skin Painted Hero
+                            3. Kembali Ke Menu Utama\n
+                <============================================> \n""";
+
+
     int PickSpesialist;
     String FixSpesialist;
     int HargaHero;
@@ -46,6 +55,7 @@ public class system {
 
     // Fungsi tambah data
     public void tambah() throws IOException {
+        System.out.print("\033\143");
         System.out.println("""
                             \n<============================================>
                             <============== Input Data Hero =============>\n""");
@@ -94,9 +104,44 @@ public class system {
 
         Hero hero = new Hero(NamaHero, FixRole, FixSpesialist, HargaHero);
         list.add(hero);
+
+        tambahSkin(list.size() - 1);
+        tambahSkinPainted(list.size() - 1);
+    }
+
+
+    public void tambahSkin(int indeks) throws IOException {
+        System.out.println("""
+            \n<=============================================>
+            <========== Masukkan Data Skin Hero ==========>\n""");
         
-        System.out.println("\nHero " + list.get(list.size() - 1).getNama() + " Berhasil Ditambah ! ");
-        br.readLine();
+        System.out.print("\nMasukan Warna Skin Hero : ");
+        String WarnaSkin = br.readLine();
+
+        System.out.print("Masukan Harga Skin Hero : ");
+        int HargaSkin = Integer.parseInt(br.readLine());
+    
+        Skin skin = new Skin((list.get(indeks)).getNama(), (list.get(indeks)).getRole(), 
+                            (list.get(indeks)).getSpesialist(), (list.get(indeks)).getHarga(), 
+                            WarnaSkin, HargaSkin);
+        
+        listSkin.add(skin);
+    }
+
+    public void tambahSkinPainted(int indeks) throws IOException {        
+        System.out.print("\nMasukan Warna Skin Painted Hero : ");
+        String WarnaSkinPainted = br.readLine();
+
+        System.out.print("Masukan Harga Skin Painted Hero : ");
+        int HargaSkinPainted = Integer.parseInt(br.readLine());
+    
+        PaintedSkin skinPainted = new PaintedSkin((list.get(indeks)).getNama(), (list.get(indeks)).getRole(), 
+                            (list.get(indeks)).getSpesialist(), (list.get(indeks)).getHarga(),
+                            (listSkin.get(indeks)).getWarna(), (listSkin.get(indeks)).getHargaSkin(), WarnaSkinPainted, HargaSkinPainted);
+        
+        listPaintedSkin.add(skinPainted);
+
+        System.out.println("\nSkin Hero " + listPaintedSkin.get(indeks).getNama() + " Berhasil Ditambah ! ");
     }
 
     // Fungsi lihat data
@@ -108,15 +153,19 @@ public class system {
         }
         else {
             System.out.println("""
-                            <===========================================>
-                            <================ List Hero ================>""");
+                            <=================================================>
+                            <=================== List Hero ===================>\n""");
     
             for (int i = 0; i < list.size(); i++) {
-                System.out.println("\t\t     <" + (i + 1) + ">");
-                System.out.println("\t" + "Nama Hero       : " + ( list.get(i)).getNama());
-                System.out.println("\t" + "Role Hero       : " +  (list.get(i)).getRole());
-                System.out.println("\t" + "Spesialist Hero : " + (list.get(i)).getSpesialist());
-                System.out.println("\t" + "Harga Hero      : " +  (list.get(i)).getHarga());
+                System.out.println("\t\t       <" + (i + 1) + ">");
+                System.out.println("\t" + "Nama Hero               : " + ( list.get(i)).getNama());
+                System.out.println("\t" + "Role Hero               : " + ( list.get(i)).getRole());
+                System.out.println("\t" + "Spesialist Hero         : " + ( list.get(i)).getSpesialist());
+                System.out.println("\t" + "Harga Hero              : " + ( list.get(i)).getHarga());
+                System.out.println("\t" + "Warna Skin Hero         : " + ( listSkin.get(i)).getWarna());
+                System.out.println("\t" + "Harga Skin Hero         : " + ( listSkin.get(i)).getHargaSkin());
+                System.out.println("\t" + "Warna Skin Painted Hero : " + ( listPaintedSkin.get(i)).getWarnaSkinPainted());
+                System.out.println("\t" + "Harga Skin Painted Hero : " + ( listPaintedSkin.get(i)).getHargaSkinPainted());
                 System.out.println("\n");
             }
         }
@@ -180,6 +229,35 @@ public class system {
         Hero hero = new Hero(NamaHero, FixRole, FixSpesialist, HargaHero);
 
         list.set(indeks - 1, hero);
+        
+        System.out.println("""
+            \n<============================================>
+            <========== Masukan data skin hero ==========>\n""");
+        
+        System.out.print("\nMasukan Warna Skin Hero : ");
+        String WarnaSkin = br.readLine();
+
+        System.out.print("Masukan Harga Skin Hero : ");
+        int HargaSkin = Integer.parseInt(br.readLine());
+    
+        Skin skin = new Skin((list.get(indeks - 1)).getNama(), (list.get(indeks - 1)).getRole(), 
+                            (list.get(indeks - 1)).getSpesialist(), (list.get(indeks - 1)).getHarga(), 
+                            WarnaSkin, HargaSkin);
+                            
+        listSkin.set(indeks - 1, skin);
+        
+        System.out.print("\nMasukan Warna Skin Painted Hero : ");
+        String WarnaSkinPainted = br.readLine();
+
+        System.out.print("Masukan Harga Skin Painted Hero : ");
+        int HargaSkinPainted = Integer.parseInt(br.readLine());
+    
+        PaintedSkin skinPainted = new PaintedSkin((list.get(indeks - 1)).getNama(), (list.get(indeks - 1)).getRole(), 
+                            (list.get(indeks - 1)).getSpesialist(), (list.get(indeks - 1)).getHarga(),
+                            (listSkin.get(indeks - 1)).getWarna(), (listSkin.get(indeks - 1)).getHargaSkin(), WarnaSkinPainted, HargaSkinPainted);
+        
+
+        listPaintedSkin.set(indeks - 1, skinPainted);
         System.out.println("\nData Hero Berhasil Diubah ! ");
     }
 
@@ -193,6 +271,8 @@ public class system {
         indeks = Integer.parseInt(br.readLine());
 
         list.remove(indeks - 1);
+        listSkin.remove(indeks - 1);
+        listPaintedSkin.remove(indeks - 1);
         System.out.println("\nData Hero Berhasil Dihapus ! ");
     }
 }

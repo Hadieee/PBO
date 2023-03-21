@@ -2,6 +2,8 @@ package MLBB;
 
 public class Skin extends Hero {
     private String warna;
+    private int hargaSkin;
+
     public String getWarna() {
         return warna;
     }
@@ -9,8 +11,6 @@ public class Skin extends Hero {
     public void setWarna(String warna) {
         this.warna = warna;
     }
-
-    private int hargaSkin;
 
     public int getHargaSkin() {
         return hargaSkin;

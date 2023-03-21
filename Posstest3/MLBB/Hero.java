@@ -1,7 +1,10 @@
 package MLBB;
 
 public class Hero {
-
+    
+    private String Nama, Role, Spesialist;
+    private int Harga;
+    
     /**
      * @return the Nama
      */
@@ -57,8 +60,6 @@ public class Hero {
     public void setHarga(int Harga) {
         this.Harga = Harga;
     }
-    private String Nama, Role, Spesialist;
-    private int Harga;
 
     public Hero(String Nama, String Role, String Spesialist, int Harga) {
         this.Nama = Nama;
