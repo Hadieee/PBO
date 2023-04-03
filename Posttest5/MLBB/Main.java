@@ -17,7 +17,7 @@ public class Main {
         system sys = new system();
 
         // List Menu utama program
-        String menu = """
+        final String menu = """
                 <==================================================>
                 <============== Management Hero MLBB ==============>\n
                                 1. Tambah Data Hero

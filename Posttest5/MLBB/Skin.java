@@ -16,7 +16,7 @@ abstract class Skin extends Hero {
         return hargaSkin;
     }
 
-    public void setHargaSkin(int hargaSkin) {
+    final void setHargaSkin(int hargaSkin) {
         this.hargaSkin = hargaSkin;
     }
 

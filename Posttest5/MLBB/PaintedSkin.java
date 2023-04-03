@@ -21,7 +21,7 @@ final class PaintedSkin extends Skin {
         WarnaSkinPainted = warnaSkinPainted;
     }
 
-    int hitungHarga (int hargaSkin) {
+    final int hitungHarga (int hargaSkin) {
         return this.HargaSkinPainted = hargaSkin * 1300;
     }
 
