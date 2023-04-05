@@ -7,7 +7,6 @@ import java.io.*;
 public class system {
     // Deklarasi Array
     ArrayList<Hero> list = new ArrayList<Hero>();
-    ArrayList<Skin> listSkin = new ArrayList<Skin>();
     ArrayList<PaintedSkin> listPaintedSkin = new ArrayList<PaintedSkin>();
 
     String NamaHero;
@@ -246,7 +245,6 @@ public class system {
         }
         else{
             list.remove(indeks - 1);
-            listSkin.remove(indeks - 1);
             listPaintedSkin.remove(indeks - 1);
             System.out.println("\nData Hero Berhasil Dihapus ! ");
         }
